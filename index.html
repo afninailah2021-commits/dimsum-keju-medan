@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimsum Keju Medan - Menu Lengkap</title>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navbar -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-cheese"></i> Dimsum <span class="highlight">Keju Medan</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="javascript:void(0)" onclick="openContactModal()">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sensasi Dimsum Premium dengan Lumeran Keju Mulur!</h1>
+            <p>Dibuat segar setiap hari dengan daging ayam pilihan, udang segar, dan keju mozzarella kualitas terbaik asli Medan.</p>
+            <a href="#menu" class="btn-primary">Lihat 10 Menu Andalan</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Menu Andalan Kami (10 Pilihan Terfavorit)</h2>
+        <div class="menu-grid">
+            
+            <!-- Menu 1 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80" alt="Dimsum Ayam Mozzarella">
+                <div class="menu-info">
+                    <span class="badge shadow">Signature</span>
+                    <h3>Dimsum Ayam Mozzarella</h3>
+                    <p>Dimsum ayam premium tebal dengan topping keju mozzarella lumer maksimal di atasnya.</p>
+                    <span class="price">Rp 25.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Ayam Mozzarella', 'Rp 25.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 2 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80" alt="Dimsum Udang Mozzarella">
+                <div class="menu-info">
+                    <span class="badge shadow">Signature</span>
+                    <h3>Dimsum Udang Mozzarella</h3>
+                    <p>Isian full udang juicy dibalut racikan keju mozzarella premium yang gurih mulur.</p>
+                    <span class="price">Rp 28.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Udang Mozzarella', 'Rp 28.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 3 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=500&q=80" alt="Dimsum Mentai Mozzarella">
+                <div class="menu-info">
+                    <span class="badge mentai">Mentai Series</span>
+                    <h3>Dimsum Mentai Mozzarella</h3>
+                    <p>Double kill! Saus mentai creamy jepang dibakar berpadu lumeran mozzarella asli.</p>
+                    <span class="price">Rp 29.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Mentai Mozzarella', 'Rp 29.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 4 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80" alt="Dimsum Kani Mentai">
+                <div class="menu-info">
+                    <span class="badge mentai">Mentai Series</span>
+                    <h3>Dimsum Kani Mentai Crunch</h3>
+                    <p>Topping crabstick premium dengan saus mentai bakar dan taburan keju parut renyah.</p>
+                    <span class="price">Rp 27.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Kani Mentai Crunch', 'Rp 27.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 5 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=500&q=80" alt="Dimsum Spicy Mercon">
+                <div class="menu-info">
+                    <span class="badge spicy">Spicy Series</span>
+                    <h3>Dimsum Lava Mercon</h3>
+                    <p>Buat yang suka pedas! Dimsum ayam disiram sambal lava cabe rawit ulek plus keju lumer.</p>
+                    <span class="price">Rp 26.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Lava Mercon', 'Rp 26.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 6 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80" alt="Dimsum Samyang Cheese">
+                <div class="menu-info">
+                    <span class="badge spicy">Spicy Series</span>
+                    <h3>Dimsum Samyang Cheese</h3>
+                    <p>Saus Samyang super pedas khas Korea berkolaborasi dengan keju mozzarella gurih.</p>
+                    <span class="price">Rp 28.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Samyang Cheese', 'Rp 28.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 7 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80" alt="Dimsum Nori Mozzarella">
+                <div class="menu-info">
+                    <span class="badge klasik">Classic Twist</span>
+                    <h3>Dimsum Nori Mozzarella</h3>
+                    <p>Dimsum ayam berbalut kulit rumput laut Jepang (nori) dipadu dengan lelehan keju.</p>
+                    <span class="price">Rp 26.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Nori Mozzarella', 'Rp 26.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 8 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80" alt="Dimsum Rambutan Mozzarella">
+                <div class="menu-info">
+                    <span class="badge klasik">Classic Twist</span>
+                    <h3>Dimsum Rambutan Cheese</h3>
+                    <p>Dimsum krispi berbalut mi renyah bagian luar dengan kejutan keju lumer di dalam.</p>
+                    <span class="price">Rp 25.000 / porsi</span>
+                    <button class="btn-order" onclick="openOrderModal('Dimsum Rambutan Cheese', 'Rp 25.000 / porsi')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 9 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80" alt="Cheese Berry Soda">
+                <div class="menu-info">
+                    <span class="badge drinks">Drinks</span>
+                    <h3>Cheese Berry Soda</h3>
+                    <p>Minuman soda strawberry segar yang diberi topping cream cheese gurih melimpah.</p>
+                    <span class="price">Rp 15.000 / cup</span>
+                    <button class="btn-order" onclick="openOrderModal('Cheese Berry Soda', 'Rp 15.000 / cup')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+            <!-- Menu 10 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=500&q=80" alt="Matcha Cheese Latte">
+                <div class="menu-info">
+                    <span class="badge drinks">Drinks</span>
+                    <h3>Matcha Cheese Latte</h3>
+                    <p>Bubuk matcha asli jepang diracik dengan susu segar dan lapisan tebal foam keju.</p>
+                    <span class="price">Rp 17.000 / cup</span>
+                    <button class="btn-order" onclick="openOrderModal('Matcha Cheese Latte', 'Rp 17.000 / cup')"><i class="fab fa-whatsapp"></i> Pesan via WA</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- POPUP FORM ORDER MENU (BARU) -->
+    <div id="orderModal" class="modal-overlay">
+        <div class="modal-box text-left">
+            <span class="modal-close" onclick="closeOrderModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-shopping-basket" style="color: #e67e22;"></i>
+                <h3>Form Pemesanan</h3>
+            </div>
+            <form id="formPemesanan" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>Menu yang Dipilih</label>
+                    <input type="text" id="modalMenuName" readonly class="form-input readonly-input">
+                    <input type="hidden" id="modalMenuPrice">
+                </div>
+                <div class="form-group">
+                    <label for="buyerName">Nama Lengkap *</label>
+                    <input type="text" id="buyerName" required placeholder="Masukkan nama Anda" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="buyerPhone">Nomor Telepon / WA *</label>
+                    <input type="tel" id="buyerPhone" required placeholder="Contoh: 08123456xxx" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="buyerArea">Wilayah Pengiriman (Khusus Medan) *</label>
+                    <select id="buyerArea" required class="form-input">
+                        <option value="">-- Pilih Area Medan & Sekitarnya --</option>
+                        <option value="Medan Baru">Medan Baru</option>
+                        <option value="Medan Selayang">Medan Selayang</option>
+                        <option value="Medan Sunggal">Medan Sunggal</option>
+                        <option value="Medan Petisah">Medan Petisah</option>
+                        <option value="Medan Kota">Medan Kota</option>
+                        <option value="Medan Johor">Medan Johor</option>
+                        <option value="Medan Helvetia">Medan Helvetia</option>
+                        <option value="Medan Area">Medan Area</option>
+                        <option value="Medan Tuntungan">Medan Tuntungan</option>
+                        <option value="Medan Deli / Marelan">Medan Deli / Marelan</option>
+                        <option value="Medan Denai / Amplas">Medan Denai / Amplas</option>
+                        <option value="Luar Medan (Hubungi Admin)">Sekitaran Medan Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="buyerAddress">Alamat Rumah Lengkap *</label>
+                    <textarea id="buyerAddress" required placeholder="Nama jalan, nomor rumah, blok, atau patokan rincinya..." class="form-input" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit-order"><i class="fab fa-whatsapp"></i> Kirim Pesanan Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- POPUP MODAL KONTAK TOKO -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeContactModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-address-book" style="color: #e67e22;"></i>
+                <h3>Hubungi Kami</h3>
+            </div>
+            <div class="modal-body">
+                <p class="store-address"><i class="fas fa-map-marker-alt"></i> Jl. Dr. Mansyur No. 123, Padang Bulan, Medan (Dekat Kampus USU)</p>
+                <div class="contact-number-box">
+                    <span class="phone-label">Hotline & WhatsApp:</span>
+                    <h2 class="phone-number">085767823715</h2>
+                </div>
+                <div class="modal-actions">
+                    <a href="https://wa.me/6285767823715" target="_blank" class="modal-btn wa-btn">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                    <a href="tel:085767823715" class="modal-btn call-btn">
+                        <i class="fas fa-phone-alt"></i> Telepon Langsung
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dimsum Keju Medan. All rights reserved. | <a href="javascript:void(0)" onclick="openContactModal()" style="color: #f1c40f; text-decoration: none; font-weight: bold;">Hubungi Kontak</a></p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
