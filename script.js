@@ -1,4 +1,6 @@
-const NOMOR_HP_TOKO = "6285767823715"; // Target pengiriman WhatsApp Utama
+const NOMOR_HP_TOKO = "6285767823715"; 
+// GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT LO YANG SEBENARNYA:
+const URL_GOOGLE_SHEETS_API = "PASTE_URL_WEB_APP_APPS_SCRIPT_DISINI";
 
 // LOGIKA MODAL FORM PEMESANAN MENU
 function openOrderModal(namaMenu, hargaMenu) {
@@ -12,14 +14,14 @@ function openOrderModal(namaMenu, hargaMenu) {
 function closeOrderModal() {
     const orderModal = document.getElementById('orderModal');
     orderModal.classList.remove('active');
-    document.getElementById('formPemesanan').reset(); // Bersihkan isi data form
+    document.getElementById('formPemesanan').reset();
 }
 
-// EKSEKUSI PENGIRIMAN DATA FORM KE WHATSAPP
+// EKSEKUSI PENGIRIMAN DATA SEKALIGUS (GOOGLE SHEETS + WHATSAPP)
 function submitOrder(event) {
-    event.preventDefault(); // Mencegah reload halaman web
+    event.preventDefault(); // Mencegah reload halaman
 
-    // Mengambil value dari tiap input form
+    // 1. Ambil data dari form input
     const menuName = document.getElementById('modalMenuName').value;
     const menuPrice = document.getElementById('modalMenuPrice').value;
     const buyerName = document.getElementById('buyerName').value;
@@ -27,7 +29,30 @@ function submitOrder(event) {
     const buyerArea = document.getElementById('buyerArea').value;
     const buyerAddress = document.getElementById('buyerAddress').value;
 
-    // Format struktur teks pesan yang rapi untuk dikirim ke WA
+    // 2. Bungkus data dalam format JSON untuk dikirim ke Google Sheets
+    const dataPemesanan = {
+        menuName: menuName,
+        menuPrice: menuPrice,
+        buyerName: buyerName,
+        buyerPhone: buyerPhone,
+        buyerArea: buyerArea,
+        buyerAddress: buyerAddress
+    };
+
+    // 3. Proses pengiriman data ke Google Sheets di latar belakang (Background)
+    fetch(URL_GOOGLE_SHEETS_API, {
+        method: "POST",
+        body: JSON.stringify(dataPemesanan)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log("Sukses masuk Google Sheets:", result);
+    })
+    .catch(error => {
+        console.error("Gagal masuk Google Sheets, tapi orderan WA tetap jalan:", error);
+    });
+
+    // 4. Format pesan teks untuk WhatsApp
     const teksPesanWA = `*HALO DIMSUM KEJU MEDAN (NEW ORDER)* 🔔\n` +
                         `-----------------------------------------\n` +
                         `*Detail Menu:* ${menuName} (${menuPrice})\n\n` +
@@ -39,11 +64,11 @@ function submitOrder(event) {
                         `-----------------------------------------\n` +
                         `Mohon segera diproses dan hitungkan total ongkirnya ya Min! 🙏`;
 
-    // Buat URL API WhatsApp
+    // 5. Buka WhatsApp otomatis di tab baru
     const urlWhatsApp = `https://api.whatsapp.com/send?phone=${NOMOR_HP_TOKO}&text=${encodeURIComponent(teksPesanWA)}`;
-    
-    // Alihkan user ke WhatsApp di tab baru & tutup modal form di web
     window.open(urlWhatsApp, '_blank');
+    
+    // 6. Tutup modal form setelah selesai
     closeOrderModal();
 }
 
@@ -61,12 +86,8 @@ window.onclick = function(event) {
     const orderModal = document.getElementById('orderModal');
     const contactModal = document.getElementById('contactModal');
     
-    if (event.target === orderModal) {
-        closeOrderModal();
-    }
-    if (event.target === contactModal) {
-        closeContactModal();
-    }
+    if (event.target === orderModal) { closeOrderModal(); }
+    if (event.target === contactModal) { closeContactModal(); }
 }
 
-console.log("Website Dimsum Keju Medan versi Dynamic Form WhatsApp berhasil diintegrasikan.");
+console.log("Website Dimsum Terintegrasi Google Sheets & WhatsApp Siap Digunakan.");
